@@ -7,6 +7,7 @@ from matplotlib import pyplot as plt
 from matplotlib.collections import LineCollection
 from matplotlib import cm
 import numpy as np
+import pandas as pd
 
 st.set_option("deprecation.showPyplotGlobalUse", False)
 
@@ -15,12 +16,12 @@ path = './doc_cache/'
 if os.path.exists(path):
     st.write('Path exists')
 else:
-    st.write('Path does not exist')
     os.mkdir(path)
-    st.write('Path created')
 
+st.info('Cache is Enabled..', icon="ℹ️")
 fastf1.Cache.enable_cache("./doc_cache")
 
+session_list = ['Practice 1', 'Practice 2', 'Practice 3', 'Sprint Qualifying', 'Sprint', 'Qualifying', 'Race']
 
 class App:
     def __init__(self, year: int= 2021, grand_prix: str = "Austrian Grand Prix", session: str = "Q"):
