@@ -1,3 +1,4 @@
+import os
 import fastf1
 import fastf1.plotting
 import streamlit as st
@@ -9,16 +10,30 @@ import numpy as np
 
 st.set_option("deprecation.showPyplotGlobalUse", False)
 
+path = './doc_cache/'
+ 
+if os.path.exists(path):
+    st.write('Path exists')
+else:
+    st.write('Path does not exist')
+    os.mkdir(path)
+    st.write('Path created')
+
 fastf1.Cache.enable_cache("./doc_cache")
+
 
 class App:
     def __init__(self, year: int= 2021, grand_prix: str = "Austrian Grand Prix", session: str = "Q"):
         self.session = fastf1.get_session(year, grand_prix, session)
-        self.session.load()
-
+        with st.spinner('Loading Session Data...'):
+            self.session.load()
+            st.success('Done!')
+    
+    @st.cache
     def pick_fastest_lap(self):
         return self.session.laps.pick_fastest()
 
+    @st.cache
     def telemetry(self):
         return self.get_fastest_lap().get_telemetry()
 
