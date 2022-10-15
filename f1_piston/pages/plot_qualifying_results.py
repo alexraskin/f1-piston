@@ -15,7 +15,7 @@ else:
 
 fastf1.Cache.enable_cache(path)
 
-@st.experimental_memo
+@st.experimental_singleton
 def load_fastf1(year: int, grand_prix: str, session: str):
     session = fastf1.get_session(year, grand_prix, session)
     session.load()

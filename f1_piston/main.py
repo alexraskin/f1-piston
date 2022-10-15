@@ -75,7 +75,6 @@ event = st.sidebar.selectbox(
 
 f1_client = App(year=year, grand_prix=event, session=session_type)
 
-
 with st.spinner("Building Telemetry Plot..."):
     lap_data = f1_client.pick_fastest_lap()
     telemetry = lap_data.get_telemetry()
