@@ -50,9 +50,10 @@ session_type = st.sidebar.selectbox(
         "Qualifying",
         "Race",
     ),
+    default = "Qualifying"
 )
 
-year = st.sidebar.selectbox("Select Year: ", list(range(2018, 2022)))
+year = st.sidebar.selectbox("Select Year: ", list(range(2018, 2022)), default=2021)
 
 
 event = st.sidebar.selectbox(

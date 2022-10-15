@@ -41,18 +41,6 @@ st.write("All data is from [Fast-F1](https://github.com/theOehrly/Fast-F1)")
 
 st.sidebar.title("Please choose from the following options")
 
-session_type = st.sidebar.selectbox(
-    "Please select the session",
-    (
-        "Practice 1",
-        "Practice 2",
-        "Practice 3",
-        "Sprint Qualifying",
-        "Sprint",
-        "Qualifying",
-        "Race",
-    ),
-)
 
 year = st.sidebar.selectbox("Select Year: ", list(range(2018, 2022)))
 
@@ -66,7 +54,7 @@ with st.spinner("Building... 🔨 Please wait..."):
             mpl_timedelta_support=True, color_scheme=None, misc_mpl_mods=False
         )
 
-        session = load_fastf1(year, event, session_type)
+        session = load_fastf1(year, event)
         drivers = pd.unique(session.laps["Driver"])
 
         list_fastest_laps = list()
