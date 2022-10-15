@@ -28,10 +28,18 @@ def load_fastf1(year: int, grand_prix: str, session: str):
 
 st.set_option("deprecation.showPyplotGlobalUse", False)
 st.set_page_config(
-    page_title="F1 Piston Visualization", page_icon="🏎️", layout="centered"
+    page_title="F1 Piston Visualization",
+    page_icon="🏎️",
+    layout="centered",
+    menu_items={
+        "About": "All data is from [Fast-F1](https://github.com/theOehrly/Fast-F1)",
+        "Report a bug": "https://github.com/alexraskin/f1-piston/issues",
+    },
 )
 st.title("Qualifying results Visualization 🏎️")
 st.write("All data is from [Fast-F1](https://github.com/theOehrly/Fast-F1)")
+
+st.sidebar.title("Please choose from the following options")
 
 session_type = st.sidebar.selectbox(
     "Please select the session",

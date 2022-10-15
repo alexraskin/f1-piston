@@ -12,10 +12,15 @@ logging.basicConfig(level=logging.INFO)
 
 st.set_option("deprecation.showPyplotGlobalUse", False)
 st.set_page_config(
-    page_title="F1 Piston Visualization", page_icon="🏎️", layout="centered"
+    page_title="F1 Piston Visualization",
+    page_icon="🏎️",
+    layout="centered",
+    menu_items={
+        "About": "All data is from [Fast-F1](https://github.com/theOehrly/Fast-F1)",
+        "Report a bug": "https://github.com/alexraskin/f1-piston/issues",
+    },
 )
 st.title("Fastest Lap Gear Shift Visualization 🏎️")
-st.write("All data is from [Fast-F1](https://github.com/theOehrly/Fast-F1)")
 
 st.sidebar.title("Please choose from the following options")
 
