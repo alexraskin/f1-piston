@@ -20,7 +20,7 @@ fastf1.Cache.enable_cache(path)
 
 
 @st.experimental_memo
-def load_fastf1(year: int, grand_prix: str, session: str):
+def load_fastf1(year: int = 2021, grand_prix: str = "Austrian Grand Prix", session: str = "Q"):
     session = fastf1.get_session(year, grand_prix, session)
     session.load()
     return session

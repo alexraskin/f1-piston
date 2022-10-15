@@ -39,9 +39,6 @@ def load_session(year: int, grand_prix: str, session: str):
     return session
 
 
-session = load_session(2021, "Austrian Grand Prix", "Q")
-
-
 session_type = st.sidebar.selectbox(
     "Please select the session",
     (
@@ -62,6 +59,7 @@ event = st.sidebar.selectbox(
     "Please select the Grand Prix:", fastf1.get_event_schedule(year).EventName
 )
 
+session = load_session(year, event, session_type)
 
 with st.spinner("Building... 🔨 Please wait..."):
     try:
