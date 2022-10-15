@@ -64,12 +64,8 @@ session_type = st.sidebar.selectbox(
         "Race",
     ),
 )
-with st.sidebar:
-    with st.echo():
-        st.write("Choose the year and Grand Prix")
 
-years = [2021, 2020, 2019, 2018]
-year = st.sidebar.selectbox("Select Year: ", years, index=0)
+year = st.sidebar.selectbox("Select Year: ", list(range(2018, 2022)))
 
 f1_client = App(year=year, session=session_type)
 
