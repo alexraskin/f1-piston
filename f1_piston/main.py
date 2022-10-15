@@ -1,13 +1,12 @@
 import os
+
 import fastf1
-
 import fastf1.plotting
-import streamlit as st
-from matplotlib import pyplot as plt
-
-from matplotlib.collections import LineCollection
-from matplotlib import cm
 import numpy as np
+import streamlit as st
+from matplotlib import cm
+from matplotlib import pyplot as plt
+from matplotlib.collections import LineCollection
 
 st.set_option("deprecation.showPyplotGlobalUse", False)
 st.set_page_config(page_title="F1 Piston", page_icon="🏎️", layout="centered")
@@ -70,7 +69,9 @@ year = st.sidebar.selectbox("Select Year: ", years, index=0)
 
 f1_client = App(year=year, session=session_type)
 
-event = st.sidebar.selectbox("Please select the Grand Prix:", f1_client.load_events().EventName)
+event = st.sidebar.selectbox(
+    "Please select the Grand Prix:", f1_client.load_events().EventName
+)
 
 f1_client = App(year=year, grand_prix=event, session=session_type)
 
