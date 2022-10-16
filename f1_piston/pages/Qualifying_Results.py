@@ -23,6 +23,16 @@ fastf1.Cache.enable_cache(path)
 def load_fastf1(
     year: int = 2021, grand_prix: str = "Austrian Grand Prix", session: str = "Q"
 ):
+    """
+    The load_fastf1 function loads a session from the FASTf1 database.
+    It takes three parameters: year, grand_prix and session.
+    The default values are 2021, ;Austrian Grand Prix; and Q
+        
+    :param year:int=2021: Specify the year of the race
+    :param grand_prix:str=&quot;AustrianGrandPrix&quot;: Specify the name of the grand prix
+    :param session:str=&quot;Q&quot;: Select the qualifying session
+    :return: A session object
+    """
     try:
         session = fastf1.get_session(year, grand_prix, session)
         session.load()
