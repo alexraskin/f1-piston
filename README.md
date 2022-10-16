@@ -8,3 +8,8 @@ Just trying out streamlit, and the fastf1 python package.
 poetry install
 ```
 
+## Viewing the app
+
+```bash
+make start
+```
