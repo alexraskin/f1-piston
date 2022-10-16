@@ -48,7 +48,7 @@ st.write("All data is from [Fast-F1](https://github.com/theOehrly/Fast-F1)")
 st.sidebar.title("Please choose from the following options")
 
 
-year = st.sidebar.selectbox("Select Year: ", list(range(2018, 2022)))
+year = st.sidebar.selectbox("Select Year: ", list(range(2019, 2022)))
 
 event = st.sidebar.selectbox(
     "Please select the Grand Prix:", fastf1.get_event_schedule(year).EventName
