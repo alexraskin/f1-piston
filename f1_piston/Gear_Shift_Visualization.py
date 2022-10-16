@@ -34,8 +34,12 @@ fastf1.Cache.enable_cache(path)
 
 @st.cache
 def load_session(year: int, grand_prix: str, session: str):
-    session = fastf1.get_session(year, grand_prix, session)
-    session.load()
+    try:
+        session = fastf1.get_session(year, grand_prix, session)
+        session.load()
+    except Exception as e:
+        st.error(f"An error occurred loading the session")
+        logging.error(e)
     return session
 
 
@@ -50,7 +54,7 @@ session_type = st.sidebar.selectbox(
         "Qualifying",
         "Race",
     ),
-    index = 5
+    index=5,
 )
 
 year = st.sidebar.selectbox("Select Year: ", list(range(2018, 2022)), index=1)
