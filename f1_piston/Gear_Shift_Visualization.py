@@ -24,7 +24,7 @@ st.title("Fastest Lap Gear Shift Visualization 🏎️")
 
 st.sidebar.title("Please choose from the following options")
 
-if os.path.exists(path := "../doc_cache"):
+if os.path.exists(path := "./doc_cache"):
     pass
 else:
     os.mkdir(path)
