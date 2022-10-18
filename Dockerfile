@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 EXPOSE 8501
 
@@ -14,4 +14,4 @@ RUN git clone https://github.com/alexraskin/f1-piston.git .
 
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT ["streamlit", "run", "f1_piston/main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "f1_piston/Gear_Shift_Visualization.py", "--server.port=8501", "--server.address=0.0.0.0"]
