@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"remote.restoreForwardedPorts": true,
+		"editor.tabSize": 2,
+  		"[python]": {
+    "editor.tabSize": 4,
+	},
+	"editor.codeActionsOnSave": {
+	},
+	"files.autoSave": "onFocusChange",
+	"terminal.integrated.confirmOnExit": "hasChildProcesses",
+	"remote.portsAttributes": {
+	
+		"443": {
+			"protocol": "https"
+		},
+		"8443": {
+			"protocol": "https"
+		}
+	}
+}
+}
